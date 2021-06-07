@@ -15,18 +15,21 @@ console.log('Sample JavaScript #4 HW #18');
 
 let wordsList = function(str, subStr) {
   let arr = [];
-  // let strSearch = function(item) {
-  //   return item.indexOf(subStr) > -1;
+  // let strSearch = function(item) { // функция принимает в качестве параметра item элемент массива
+  // каждый элемент массива это строка, которую через метод indexOf проверяем наличие подстроки(subStr). Метод indexOf() возвращает позицию подстроки или "-1" если подстрока не найдена
+  //   return item.indexOf(subStr) > -1; // Если метод indexOf возвращает больше "-1" то подстрока найдена и функция возвращает эту строку(в нашем случае элемент массива)
   // }
-  arr = str.replace(/[^a-zа-яё\s]/gi, '').toLowerCase().split(' ').filter((item) => item.indexOf(subStr) > -1);
+  arr = str.replace(/[^a-zа-яё\s]/gi, '').toLowerCase().split(' ').filter((item) => item.indexOf(subStr) > -1); // replace(/[^a-zа-яё\s]/gi, '') - Заменяем в стоке символы(. , ! ? ; : ") на '', toLowerCase() - приводим к нижнему регистру, split(' ') - разбиваем строку на массив используя разделитель пробел(' '), filter((item) => item.indexOf(subStr) > -1) - метод filter используется для фильтрации массива через функцию и создаст новый массив в который войдут только те элементы массива которые вернет функция
   // console.log(arr);
 
-  let res = new Set(); // не будет повторяющихся элементов
+  let res = new Set(); // Создаем переменную res экземпляр объекта Set()
+  /* Set – коллекция для хранения множества значений, причем каждое значение
+может встречаться лишь один раз. */
 
-  arr.forEach((item) => {
-    res.add(item);
+  arr.forEach((item) => { // Перебираем массив с отфильтрованными элементами
+    res.add(item); // и добавляем их в коллекцию Set
   });
-  return res;
+  return res; // возвращаем результат
 };
 
 let myLongStr = 'Lorem". ipsum, dolor! sit? amet: consectetur; adipisicing elit. Dolores quas alias animi inventore delectus quo non, fugit officiis a repellendus facere quae perferendis quos doloremque in, accusantium eum sint corrupti similique voluptatibus omnis mollitia id ex. Adipisci temporibus laborum fugit aperiam, minima recusandae nemo! Voluptas, fugiat sunt saepe dignissimos quam possimus vero voluptatibus quas commodi ipsa vitae, est error voluptate ex cum? Ab, numquam doloremque sunt id molestias explicabo tenetur? Corporis, quisquam voluptatem doloremque itaque est quod impedit, commodi illo eius dicta, enim reiciendis quidem minus tempora sapiente ratione. Repudiandae tempora officia voluptate nam cum dolore corrupti dolorem asperiores quisquam dicta, officiis distinctio ad possimus earum rerum ipsam veritatis enim voluptatum ea numquam doloremque deleniti sapiente velit maxime. Temporibus nostrum perspiciatis molestiae tempora, quo molestias numquam atque obcaecati unde quos itaque modi fugiat dolorem non rerum harum, esse, impedit voluptas minus? Deleniti atque reiciendis voluptate aut consequuntur blanditiis dolores dolorem magni adipisci eius unde, rerum explicabo labore molestias non et exercitationem mollitia iure. Est libero recusandae et, animi sunt a blanditiis consequuntur nemo iste laudantium quos sint ipsa ad possimus sequi dolor ipsum mollitia facilis? Officia quasi rerum atque esse voluptatum quae eos! Sequi eum repellat, molestiae enim soluta quos, tempora recusandae nulla facere quae assumenda harum modi laboriosam. Earum error aspernatur explicabo? Earum non, nesciunt distinctio quod dolores facere, placeat consectetur illum omnis eligendi ullam! Totam laudantium voluptates esse inventore molestias sapiente corrupti temporibus iure! Explicabo laudantium repellendus ullam laboriosam. Odit nostrum sit autem at laboriosam? Autem cupiditate facilis dolore nemo perferendis facere! Maiores iure voluptas obcaecati nihil. Rerum dignissimos fugit a dolorem earum soluta, ut at ullam repudiandae sunt, voluptatum fugiat reiciendis distinctio ipsum, neque magni mollitia laborum perferendis nihil voluptatem adipisci assumenda aperiam! Libero natus fuga fugiat corrupti recusandae vel asperiores earum qui explicabo doloremque, magni error expedita dolor quia eos omnis nostrum facilis fugit molestiae culpa placeat eius! Fuga cum obcaecati esse, inventore cumque quibusdam fugiat beatae? Delectus rerum vel repellat fugiat eius id doloribus. Suscipit hic, vel nobis optio obcaecati cupiditate ullam? Facere, vitae natus, reprehenderit debitis, ea reiciendis doloribus possimus repudiandae nihil accusamus iusto neque ex voluptate nam fugiat voluptates atque facilis sed. Vitae non iure placeat, nam doloribus temporibus consectetur esse distinctio sit tempore, corrupti vero amet odit vel nostrum voluptatum! Ipsum nihil omnis tenetur debitis, sit eligendi! Suscipit vitae quae nemo eveniet veritatis. Perspiciatis modi expedita placeat aut voluptate officiis atque quasi tenetur nulla animi! Minus omnis nesciunt beatae ullam itaque facilis a consequatur, at fugiat natus placeat inventore vitae, cumque quo ipsum? Deserunt suscipit velit dolor nemo quasi deleniti nisi, temporibus explicabo laboriosam, corrupti, ad quibusdam ratione praesentium. Quo totam, qui libero, id iusto, asperiores vitae dolorem perferendis minus distinctio animi repudiandae. Reprehenderit maxime eum asperiores velit praesentium nulla soluta minus at ad consequuntur, error deleniti non corrupti voluptatibus ullam repellat quod ipsa tempora ut! Nemo corrupti aut quia corporis odit maxime laudantium nam unde perspiciatis est, dicta perferendis debitis et quod deleniti! Distinctio, sapiente ducimus ipsam id cumque eveniet totam veritatis nisi ex quis amet quod, quisquam fugit est perferendis quia culpa consequatur eaque incidunt. Rem repudiandae voluptatibus adipisci ad soluta deserunt sapiente culpa saepe veritatis similique illo veniam ipsum ducimus nisi, iste est accusantium unde nesciunt laboriosam itaque beatae eius exercitationem neque quam. In aspernatur totam doloribus quisquam voluptatem commodi, nostrum reiciendis, esse maxime ipsa laudantium ut sed quos. Repudiandae odio sunt minus reprehenderit, laudantium aliquam ea aperiam, voluptas placeat nemo harum excepturi commodi nostrum perspiciatis aut iusto. Accusamus ad voluptatem eaque, distinctio accusantium unde voluptatum esse autem molestiae obcaecati numquam. Cumque sint, est temporibus, quia animi iste quo repudiandae, laudantium voluptatibus ducimus architecto. Vel doloribus obcaecati perspiciatis voluptatum voluptatibus molestias sit, sed reiciendis esse ea exercitationem delectus quos officiis aliquid porro architecto magni sint temporibus illo aspernatur reprehenderit deserunt deleniti doloremque? Aliquam, ut minima. Architecto et, magnam dignissimos nam animi facilis? Recusandae quis ex repellat, voluptatibus veritatis modi beatae ea provident? Excepturi eligendi laudantium beatae dolores eum, accusantium eveniet ipsa quidem voluptas repellendus illo veniam magnam saepe asperiores quos modi in necessitatibus officiis tenetur dolorem, minima voluptate similique praesentium! Necessitatibus sint, itaque impedit, laboriosam, ratione blanditiis at dolor quos aliquam nobis nemo amet quia. Nostrum sit nesciunt, illum deleniti, aliquid, aut ipsa sapiente officia molestias ipsam modi. Quod cupiditate vel quidem iure nemo? Quisquam beatae natus est non amet nostrum dicta reiciendis expedita. Consequatur quo pariatur voluptatem voluptatum sed velit molestiae nemo odio sequi in? Soluta laboriosam ipsam incidunt architecto pariatur, harum molestiae dignissimos quaerat ducimus, dolorem autem qui aliquam doloremque tenetur itaque optio fuga, iusto officia at? Esse blanditiis veritatis voluptas, similique, ipsum, voluptate illum beatae ducimus magni perferendis fuga ea? Est voluptatum culpa delectus voluptatibus doloribus recusandae porro veritatis, molestiae magni soluta, possimus quidem voluptas suscipit obcaecati dolores voluptatem neque, asperiores labore corrupti dicta. Consequatur eius, inventore autem doloremque recusandae quae! Neque facere laudantium blanditiis inventore temporibus nostrum praesentium aperiam perspiciatis dicta perferendis ullam ab impedit adipisci dolorem exercitationem dignissimos ipsum minus incidunt tempore in, illo placeat odio dolorum. Maiores sed est id officiis praesentium ratione cumque ut iste alias laboriosam. Repellendus deserunt ut optio exercitationem ab repudiandae ex doloremque nisi magni numquam accusantium recusandae nesciunt sint quisquam odio, eum aliquam et excepturi culpa praesentium nam laudantium soluta dolorem saepe? Dicta hic sint totam temporibus expedita iste velit, minus blanditiis similique! Nemo quam natus explicabo voluptas perspiciatis ex molestias blanditiis magnam quibusdam, consequatur culpa ducimus facere soluta accusamus porro ratione velit fuga eaque. Natus consequuntur odit dolore illo totam minima, cum explicabo expedita debitis aperiam, tempore ducimus eum inventore odio assumenda atque, recusandae error. Doloribus omnis voluptate fugit ad quam a, mollitia culpa commodi libero vero delectus corporis fuga blanditiis nesciunt aut porro incidunt, iure dolore placeat necessitatibus odio quaerat iste. Necessitatibus enim earum praesentium tenetur, temporibus pariatur recusandae perferendis reiciendis numquam consequuntur alias non. Debitis commodi quia, magni minus quaerat aliquam assumenda repudiandae doloribus consectetur ipsam sapiente animi! Dolorem commodi tempore, quos reprehenderit ducimus adipisci cum quia maiores tenetur ex modi quibusdam incidunt. Minima, amet?';
@@ -51,26 +54,46 @@ console.log(wordsList(myLongStr, 'rep')); // {"repellendus", "repudiandae", "rep
  * isISO – опциональный параметр переключения формата даты.
  */
 
-let myDate = new Date();
+let myDate = new Date(); // объект Date с текущей датой и временем
 
-let getLocalDate = function(date, isSeconds = false, isISO = false) {
-  let day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-  let month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-  let year = date.getFullYear();
-  let hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-  let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-  let seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-  let res;
+let getLocalDate = function(date, isSeconds = false, isISO = false) { // Функция принимает параметр myDate и преобразует в нужный формат даты в зависимость от параметров isSeconds и isISO. По умолчанию они равны false
+  let day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate(); // Если день меньше 10 тогда выводим перед цифрой ноль(0) иначе целую двузначную дату
+  let month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1; // Получает месяц от нуля до 11. Если месяц + 1 меньше десяти, тогда выводим ноль(0) перед числом иначе двузначное число месяца
+  let year = date.getFullYear(); // метод выводит полный год из четырех цифр
+  let hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours(); // метод получает час
+  let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes(); // минуты
+  let seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds(); // секунды
+  let res; // Объявляем переменную res
 
   /* return day + '.' + month + '.' + year + ', ' + hours + ':' + minutes + ':' + seconds; */
 
-  if (!isISO) {
+  // const reg = new RegExp(':\\d{2}$', 'gui');
+  // let res;
+
+  // if (!isISO) res = isSeconds
+  //   ? date.toLocaleString()
+  //   : date.toLocaleString().replace(reg, '');
+  // else {
+  //   const year = date.getFullYear();
+  //   const month = date.getMonth() + 1 < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  //   const day = date.getDate() < 9 ? `0${date.getDate()}` : date.getDate();
+  //   const hour = date.getHours() < 9 ? `0${date.getHours()}` : date.getHours();
+  //   const minutes = date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes();
+  //   const seconds = date.getSeconds() < 9 ? `0${date.getSeconds()}` : date.getSeconds();
+
+  //   res = isSeconds
+  //     ? `${year}-${month}-${day}, ${hour}:${minutes}:${seconds}`
+  //     : `${year}-${month}-${day}, ${hour}:${minutes}`;
+
+  if (!isISO) { // Если isISO = false тогда переменная res принимает формат даты начиная с "dd.mm.yyyy"
+    // Если isSeconds = true, тогда формат даты "dd.mm.yyyy, hh:mm:ss", иначе "dd.mm.yyyy, hh:mm"
     res = isSeconds ? day + '.' + month + '.' + year + ', ' + hours + ':' + minutes + ':' + seconds : day + '.' + month + '.' + year + ', ' + hours + ':' + minutes;
 
-  } else {
+  } else { // Если isISO = true тогда переменная res принимает формат даты начиная с "yyyy-mm-dd"
+    // Если isSeconds = true, тогда формат даты "yyyy-mm-dd, hh:mm:ss", иначе " yyyy-mm-dd, hh:mm"
     res = isSeconds ? year + '-' + month + '-' + day + ', ' + hours + ':' + minutes + ':' + seconds : year + '-' + month + '-' + day + ', ' + hours + ':' + minutes;
   }
-  return res;
+  return res; // возвращаем res
 }
 console.log(getLocalDate(myDate)); // 16.07.2019, 00:15
 console.log(getLocalDate(myDate, true)); // 16.07.2019, 00:15:32
@@ -98,14 +121,30 @@ console.log(getLocalDate(new Date(1999999123456), true, true) === '2033-05-18, 0
  * и выводит текущий день недели: "понедельник", "вторник", … "воскресенье".
  */
 
-let getWeekDay = function(date) {
-  let res = Date.parse(date);
+// let getWeekDay = (d) => {
+//   const date = new Date(d);
+//   const days = [
+//     'воскресенье',
+//     'понедельник',
+//     'вторник',
+//     'среда',
+//     'четверг',
+//     'пятница',
+//     'суббота'
+//   ];
+
+//   return days[date.getDay()];
+// };
+
+let getWeekDay = function(date) { // Функция принимает параметр дата который принимает строку
+  let res = Date.parse(date); // Создаем переменную res и присваиваем ей дату через метод Date.parse - для
+  // чтения даты из сроки
   // console.log(res);
-  let result;
-  let newDate = new Date;
-  newDate.setTime(res);
-  newDate = newDate.getDay();
-  switch (newDate) {
+  let result; // Создаем переменную result которая будет принимать значение дня недели
+  let newDate = new Date(); // Создаем переменную newDate которая будет объектом типа Date
+  newDate.setTime(res); // Через метод setTime() устанавливаем всю дату в миллисекундах
+  newDate = newDate.getDay(); // Переменной nweDate примсваиваем новое значение через метод getDay() и получаем день недели(от 0 - воскресенье, до 6 - суббота)
+  switch (newDate) { // Цикл switch/case принимает параметр newDate и в зависимости от числа дня недели будет присваивать переменной result строку с названием дня недели
     case 0:
       result = 'воскресенье';
       break;
@@ -128,7 +167,7 @@ let getWeekDay = function(date) {
       result = 'суббота';
       break;
   };
-  return result;
+  return result; // Возвращаем result
 };
 
 // getWeekDay('2019-01-30');
@@ -143,16 +182,26 @@ console.log(getWeekDay('2019-07-27')); // суббота
  * День нужно возвратить в европейской нумерации, т.е. понедельник имеет номер 1, вторник номер 2, …, воскресенье – номер 7.
  */
 
-let getLocalDay = function(date) {
-    let res = Date.parse(date);
+// let getLocalDay = (d) => {
+//   const date = new Date(d);
+//   let day = date.getDay();
+
+//   if (day === 0) day = 7;
+
+//   return day;
+// };
+
+let getLocalDay = function(date) { // Функция принимает параметр дата который принимает строку
+    let res = Date.parse(date); // Создаем переменную res и присваиваем ей дату через метод Date.parse - для
+    // чтения даты из сроки
     // console.log(res);
-    let result = new Date;
-    result.setTime(res);
-    result = result.getDay();
-    if (result === 0) {
+    let result = new Date(); // Создаем переменную result которая будет объектом типа Date
+    result.setTime(res); // Через метод setTime() устанавливаем всю дату в миллисекундах
+    result = result.getDay(); // Переменной result примсваиваем новое значение через метод getDay() и получаем день недели(от 0 - воскресенье, до 6 - суббота)
+    if (result === 0) { // Если result = 0, тогда вернуть 7
       result = 7;
-    } else result
-    return result;
+    } else result // иначе вернуть число день недели
+    return result; // Возвращаем result
   }
   // getLocalDay('2019-07-16');
 console.log(getLocalDay('2019-07-16')); // 2
@@ -167,13 +216,27 @@ console.log(getLocalDay('2019-07-27')); // 6
  * Дата принимается и возвращается в формате YYYY-MM-DD.
  */
 
-let getDateAgo = function(date, days) {
-    let firstDate = Date.parse(date);
+// let getDateAgo = (d, days) => {
+//   const date = new Date(d);
+
+//   date.setDate(date.getDate() - days);
+
+//   /*
+//    * вариант с formatter вернет дату вида
+//    * 28 січня 2019 р.
+//    * return formatter.format(date)
+//    */
+
+//   return date.toLocaleString().replace(/(\d.*),\s+(\d.*)/gu, '$1');
+// };
+
+let getDateAgo = function(date, days) { // Функция принимает два параметра дату и количество дней
+    let firstDate = Date.parse(date); // Создаем переменную firstDate и присваиваем ей дату через метод Date.parse - для чтения даты из сроки
     // console.log(firstDate);
-    let daysSeconds = days * 86400000;
-    let res = firstDate - daysSeconds;
-    let newDate = new Date;
-    newDate.setTime(res);
+    let daysSeconds = days * 86400000; // Создаем переменную daysSeconds которая будет принимать зночение количества дней в миллисекундах
+    let res = firstDate - daysSeconds; // Создаем переменную res которая будет принимать значение разницы между днями
+    let newDate = new Date(); // Создаем переменную которая будет объектом Date
+    newDate.setTime(res); // Установим значение даты в миллисекундах через метод setTime()
     // console.log(newDate);
     let day = newDate.getDate() < 10 ? `0${newDate.getDate()}` : newDate.getDate();
     let month = newDate.getMonth() + 1 < 10 ? `0${newDate.getMonth() + 1}` : newDate.getMonth();
@@ -198,35 +261,53 @@ console.log(getDateAgo('2019-01-29', 365)); // 29.01.2018
  * Способ создания прототипа не регламентирован.
  * Объекты и их методы, созданные прототипом должны полностью соответствовать объектам из прошлого задания.
  */
-
-let Car = function(engine, model, name, year) {
+// class Car {
+//   constructor(engine, model, name, _year) {
+//     this.engine = engine;
+//     this.model = model;
+//     this.name = name;
+//     this.year = _year;
+//   };
+//   get year() { return this._year = this._used === 'new' ? yearNow : this._year };
+//   set year(value) { this._year = value };
+//   get used() { return this._used = this.year !== yearNow ? 'used' : 'new' };
+//   set used(value) { this._used = value };
+//   info() {
+//     return this.name + ' ' + this.model + ", " + this.engine + 'cc, year ' + this.year + ', ' + this.used;
+//   };
+// }
+let Car = function(engine, model, name, year) { // Функция конструктор Car(прототип)
   this.engine = engine;
   this.model = model;
   this.name = name;
   this.year = year;
 };
 
-Object.defineProperties(Car.prototype, {
+Object.defineProperties(Car.prototype, { // Метод Object.defineProperties(obj, props) - определяет новые или изменяет существующие свойства, непосредственно на объекте, возвращая этот объект.
+  /* obj - Объект, на котором определяются новые или изменяются существующие свойства.
+  props - Объект, чьи собственные перечисляемые свойства представляют собой дескрипторы для создаваемых или изменяемых свойств. В нашем случае объект в которое мы будем добавлять свойства будет Car.prototype и изменять мы будем свойство used и обращатся к ниму через геттер и сеттер
+  */
   used: {
-    get() {
-      const yearNow = new Date().getFullYear();
-      return yearNow - this.year > 1 ? 'used' : 'new';
+    get() { // get - получаем значение свойства used
+      const yearNow = new Date().getFullYear(); // Создаем const - Объект типа Date() и получаем из даты год через метод getFullYear()
+      return yearNow - this.year > 1 ? 'used' : 'new'; // Если год выпуска соответсвует текущему году то возвращаем used будет 'new', если не соответсвует, т.е. их разница будет больше 1 тогда 'used'
     },
-    set(value) {
+    set(value) { // set - устанавливаем значение used
       const yearNow = new Date().getFullYear();
-      if (value === 'new' && this.year < yearNow) this.year = yearNow;
+      if (value === 'new' && this.year < yearNow) this.year = yearNow; // Если мы установили значение used === 'new' и его год меньше сегодняшний год то устанавливаем год выпуска yearNow
     }
   }
 });
 
-Car.prototype.info = function() {
+Car.prototype.info = function() { // Добавляем в прототип функции метод info() который будет возвращать нам описание машины
+  //  return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
   return this.name + ' ' + this.model + ", " + this.engine + 'cc, year ' + this.year + ', ' + this.used;
 };
 
-// let yearNow = new Date().getFullYear();
+let yearNow = new Date().getFullYear();
 
-let car = new Car(2000, 'Lacetti', 'Chevrolet', 2010);
-let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2019);
+let car = new Car(2000, 'Lacetti', 'Chevrolet', 2010); // Экземпляр класса
+let car2 = new Car(5000, 'FX50 AWD', 'Infinite', 2021);
 console.log(car.info()); // chevrolet Lacetti, 2010cc, year 2010, used
 car.used = 'new';
 console.log(car.info()); // chevrolet Lacetti, 2019cc, year 2019, new -- год изменен
@@ -245,11 +326,12 @@ console.log(car2.info()); // infinite FX50 AWD, 2019cc, year 2019, new -- изм
  * Если в качестве параметра передается что-либо кроме функции, тестирование не выполняется, возвращается 0.
  */
 
-let testPerformance = function(iterations, func) {
-  if (typeof func === 'function') {
-    let date = new Date();
-    for (let i = 0; i <= iterations; i++) func();
-    return new Date() - date;
+let testPerformance = function(iterations, func) { // Функция которая принимает в качестве параметров iterations – количество повторений для тестирования, func – тестируемая функция.
+  /* typeof - Оператор возвращает строку указывающию тип оперенда */
+  if (typeof func === 'function') { // Если func - функция, то выполняются дальнейшие действия, иначе возвращаем 0
+    let date = new Date(); // Создаем переменную date - объект типа Date() --- этой переменной присваивается значение времени в момент выполнения функции
+    for (let i = 0; i <= iterations; i++) func(); // Итерируем функцию func() от нуля до количества повторений(iterations), т.е. выполняется функция от 0 до iterations раз
+    return new Date() - date; // Возвращаем разницу между временем начала выполнения и завершением выполнения
   } else return 0;
 };
 
